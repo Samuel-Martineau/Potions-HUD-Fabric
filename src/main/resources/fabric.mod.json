@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "potions_hud_fabric",
+  "version": "${version}",
+  "name": "Potions HUD (Fabric)",
+  "description": "A simple mod that displays the current potion (status) effects on the HUD for Fabric",
+  "authors": [
+    "Samuel Martineau"
+  ],
+  "contributors": [],
+  "contact": {
+    "homepage": "https://github.com/Samuel-Martineau/Potions-HUD-Fabric",
+    "sources": "https://github.com/Samuel-Martineau/Potions-HUD-Fabric"
+  },
+  "license": "MIT",
+  "icon": "assets/potions_hud_fabric/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "me.smartineau.PotionsHUDMod"
+    ],
+    "client": [],
+    "server": []
+  },
+  "mixins": [
+    "potions_hud_fabric.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.9.0",
+    "fabric": "*"
+  },
+  "custom": {
+    "modmenu:clientsideOnly": true
+  }
+}

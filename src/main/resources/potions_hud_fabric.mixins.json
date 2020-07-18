@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "me.smartineau.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [],
+  "client": [
+    "InGameHudMixin",
+    "MinecraftClientMixin"
+  ],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
