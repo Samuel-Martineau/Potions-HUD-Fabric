@@ -38,6 +38,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./build/libs/potions_hud_fabric.jar
+          asset_path: ./build/libs/potions_hud_fabric-${{ steps.mod_version.outputs.value }}.jar
           asset_name: potions_hud_fabric-${{ steps.mod_version.outputs.value }}.jar
           asset_content_type: application/java-archive
