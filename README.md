@@ -1,5 +1,5 @@
 <div align="middle">
-  <img alt="logo" src="https://raw.githubusercontent.com/Samuel-Martineau/Potions-HUD-Fabric/master/logo/logo.png">
+  <img height="200" alt="logo" src="https://raw.githubusercontent.com/Samuel-Martineau/Potions-HUD-Fabric/master/logo/logo.png">
 </div>
 
 # Potions HUD Fabric
