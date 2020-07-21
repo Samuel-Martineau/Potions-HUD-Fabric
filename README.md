@@ -7,7 +7,7 @@
 ## Installation
 
 - Install the **[Fabric Loader](https://fabricmc.net/use/)**
-- Then, download this mod _(potions_hud_fabric-VERSION.jar)_ **[here](https://github.com/Samuel-Martineau/Potions-HUD-Fabric/releases/latest)** or **[here]()**
+- Then, download this mod _(potions_hud_fabric-VERSION.jar)_ **[here](https://github.com/Samuel-Martineau/Potions-HUD-Fabric/releases/latest)** or **[here](https://www.curseforge.com/minecraft/mc-mods/potions-hud-fabric/files)**
 - Finally, put the file in your `mods` folder
 
 ## Screenshots
