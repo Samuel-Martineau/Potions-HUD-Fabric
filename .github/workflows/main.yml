@@ -26,6 +26,19 @@ jobs:
           java-version: 11
       - name: Build with Gradle
         run: ./gradlew build
+      - name: Upload Mod Jar to CurseForge
+        uses: itsmeow/curseforge-upload@v2
+        with:
+          token: ${{ secrets.CF_API_TOKEN }}
+          project_id: 396851
+          game_endpoint: minecraft
+          file_path: ./build/libs/potions_hud_fabric-${{ steps.mod_version.outputs.value }}.jar
+          changelog: ${{ github.event.head_commit.message }}
+          display_name: potions_hud_fabric-${{ steps.mod_version.outputs.value }}.jar
+          game_versions: minecraft-1-16:-${{ steps.minecraft_version.outputs.value }}
+          release_type: release
+          relations: ''
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -47,15 +60,3 @@ jobs:
           asset_path: ./build/libs/potions_hud_fabric-${{ steps.mod_version.outputs.value }}.jar
           asset_name: potions_hud_fabric-${{ steps.mod_version.outputs.value }}.jar
           asset_content_type: application/java-archive
-      - name: Upload Mod Jar to CurseForge
-        uses: itsmeow/curseforge-upload@v2
-        with:
-          token: ${{ secrets.CF_API_TOKEN }}
-          project_id: 396851
-          game_endpoint: minecraft
-          file_path: ./build/libs/potions_hud_fabric-${{ steps.mod_version.outputs.value }}.jar
-          changelog: ${{ github.event.head_commit.message }}
-          display_name: potions_hud_fabric-${{ steps.mod_version.outputs.value }}.jar
-          game_versions: Fabric-${{ steps.minecraft_version.outputs.value }}
-          release_type: release
-          relations: ''
