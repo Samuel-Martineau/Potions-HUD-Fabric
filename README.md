@@ -1,7 +1,7 @@
 <div align="middle">
   <img height="200" alt="logo" src="https://raw.githubusercontent.com/Samuel-Martineau/Potions-HUD-Fabric/master/logo/logo.png">
   <h1>Potions HUD Fabric</h1>
-  <p>A simple mod that displays the current potion (status) effects on the HUD for Fabric 1.16.1</p>
+  <p>A simple mod that displays the current potion (status) effects on the HUD for Fabric 1.16.x</p>
 </div>
 
 ## Installation
