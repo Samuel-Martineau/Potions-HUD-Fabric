@@ -57,8 +57,6 @@ public class HUD {
             for (StatusEffectInstance statusEffectInstance : Ordering.natural().reverse().sortedCopy(statusEffects)) {
                 StatusEffect statusEffect = statusEffectInstance.getEffectType();
 
-                statusEffectInstance.isPermanent();
-
                 final int duration = statusEffectInstance.getDuration() / 20;
                 final long mins = TimeUnit.SECONDS.toMinutes(duration);
                 final long secs = duration - TimeUnit.MINUTES.toSeconds(mins);
