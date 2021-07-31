@@ -11,7 +11,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.gui.hud.InGameHud;
-import net.minecraft.client.options.GameOptions;
+import net.minecraft.client.option.GameOptions;
 import net.minecraft.client.texture.Sprite;
 import net.minecraft.client.texture.StatusEffectSpriteManager;
 import net.minecraft.client.util.math.MatrixStack;
@@ -69,7 +69,14 @@ public class HUD {
                 final int x = 3;
                 final int y = spriteSize * statusEffectsRunnables.size() + 3;
 
+                System.out.println("\n   \n---\n   ");
+
                 Sprite sprite = statusEffectSpriteManager.getSprite(statusEffect);
+                System.out.println(sprite);
+                System.out.println(sprite.getAtlas().getId());
+                System.out.println(x);
+                System.out.println(y);
+                System.out.println(inGameHud.getZOffset());
 
                 statusEffectsRunnables.add(() -> {
                     client.getTextureManager().bindTexture(sprite.getAtlas().getId());
