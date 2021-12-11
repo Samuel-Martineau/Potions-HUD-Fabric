@@ -3,6 +3,7 @@ package me.smartineau.mixin;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Ordering;
 import com.mojang.blaze3d.systems.RenderSystem;
+import me.smartineau.PotionsHUDMod;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
@@ -50,8 +51,8 @@ public class InGameHudMixin {
             int i = 0;
 
             while (statusEffectsIterator.hasNext()) {
-                int x = 3;
-                int y = spriteSize * i + 3;
+                int x = PotionsHUDMod.CONFIG_MANAGER.X_OFFSET;
+                int y = spriteSize * i + PotionsHUDMod.CONFIG_MANAGER.Y_OFFSET;
 
                 StatusEffectInstance statusEffectInstance = statusEffectsIterator.next();
                 StatusEffect statusEffect = statusEffectInstance.getEffectType();
