@@ -23,7 +23,7 @@ public class PotionsHUDMod implements ModInitializer {
     @Override
     public void onInitialize() {
         log(Level.INFO, "Initializing");
-        hud = new HUD();
+//        hud = new HUD();
     }
 
 }

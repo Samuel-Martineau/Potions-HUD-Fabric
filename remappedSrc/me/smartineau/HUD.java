@@ -25,7 +25,7 @@ import java.util.concurrent.TimeUnit;
 
 @Environment(EnvType.CLIENT)
 public class HUD {
-    private final MinecraftClient client;
+    private MinecraftClient client;
 
     public HUD() {
         client = MinecraftClient.getInstance();
