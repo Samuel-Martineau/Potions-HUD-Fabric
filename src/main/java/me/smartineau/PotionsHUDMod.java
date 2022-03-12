@@ -1,5 +1,6 @@
 package me.smartineau;
 
+import me.smartineau.config.ConfigManager;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.api.ModInitializer;
@@ -13,6 +14,8 @@ public class PotionsHUDMod implements ModInitializer {
     public static final String MOD_ID = "potions_hud_fabric";
     public static final String MOD_NAME = "Potions HUD (Fabric)";
     public static Logger LOGGER = LogManager.getLogger();
+    
+    public static ConfigManager CONFIG_MANAGER;
 
     public HUD hud;
 
@@ -24,6 +27,7 @@ public class PotionsHUDMod implements ModInitializer {
     public void onInitialize() {
         log(Level.INFO, "Initializing");
         hud = new HUD();
+        CONFIG_MANAGER = new ConfigManager();
     }
 
 }
