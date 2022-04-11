@@ -17,8 +17,6 @@ public class PotionsHUDMod implements ModInitializer {
     
     public static ConfigManager CONFIG_MANAGER;
 
-    public HUD hud;
-
     public static void log(Level level, String message) {
         LOGGER.log(level, "[" + MOD_NAME + "] " + message);
     }
@@ -26,7 +24,6 @@ public class PotionsHUDMod implements ModInitializer {
     @Override
     public void onInitialize() {
         log(Level.INFO, "Initializing");
-        hud = new HUD();
         CONFIG_MANAGER = new ConfigManager();
     }
 

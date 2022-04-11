@@ -57,38 +57,38 @@ public class InGameHudMixin {
                 StatusEffectInstance statusEffectInstance = statusEffectsIterator.next();
                 StatusEffect statusEffect = statusEffectInstance.getEffectType();
 
-                if (statusEffectInstance.shouldShowIcon()) {
-                    Sprite statusEffectSprite = statusEffectSpriteManager.getSprite(statusEffect);
+//                if (statusEffectInstance.shouldShowIcon()) {
+                Sprite statusEffectSprite = statusEffectSpriteManager.getSprite(statusEffect);
 
-                    statusEffectsRunnableList.add(() -> {
-                        RenderSystem.setShaderTexture(0, statusEffectSprite.getAtlas().getId());
-                        DrawableHelper.drawSprite(matrices, x, y, inGameHud.getZOffset(), spriteSize, spriteSize, statusEffectSprite);
+                statusEffectsRunnableList.add(() -> {
+                    RenderSystem.setShaderTexture(0, statusEffectSprite.getAtlas().getId());
+                    DrawableHelper.drawSprite(matrices, x, y, inGameHud.getZOffset(), spriteSize, spriteSize, statusEffectSprite);
 
 
-                        int duration = statusEffectInstance.getDuration() / 20;
-                        long mins = TimeUnit.SECONDS.toMinutes(duration);
-                        long secs = duration - TimeUnit.MINUTES.toSeconds(mins);
+                    int duration = statusEffectInstance.getDuration() / 20;
+                    long mins = TimeUnit.SECONDS.toMinutes(duration);
+                    long secs = duration - TimeUnit.MINUTES.toSeconds(mins);
 
-                        String formattedDuration;
-                        if (statusEffectInstance.isPermanent()) formattedDuration = "∞";
-                        else if (mins == 0) formattedDuration = secs + " sec";
-                        else formattedDuration = String.format("%d min, %d sec", mins, secs);
+                    String formattedDuration;
+                    if (statusEffectInstance.isPermanent()) formattedDuration = "∞";
+                    else if (mins == 0) formattedDuration = secs + " sec";
+                    else formattedDuration = String.format("%d min, %d sec", mins, secs);
 
-                        float textX = x + spriteSize + 3;
-                        float textY = y + (spriteSize / 2f - textRenderer.fontHeight / 2.5f);
+                    float textX = x + spriteSize + 3;
+                    float textY = y + (spriteSize / 2f - textRenderer.fontHeight / 2.5f);
 
-                        int color;
-                        if (duration <= 5)
-                            color = 0xFF5555;
-                        else if (duration <= 15)
-                            color = 0xFFAA00;
-                        else if (duration <= 25)
-                            color = 0xFFFF55;
-                        else color = 0xFFFFFF;
+                    int color;
+                    if (duration <= 5)
+                        color = 0xFF5555;
+                    else if (duration <= 15)
+                        color = 0xFFAA00;
+                    else if (duration <= 25)
+                        color = 0xFFFF55;
+                    else color = 0xFFFFFF;
 
-                        textRenderer.draw(matrices, formattedDuration, textX, textY, color);
-                    });
-                }
+                    textRenderer.draw(matrices, formattedDuration, textX, textY, color);
+                });
+//                }
 
                 i++;
             }
